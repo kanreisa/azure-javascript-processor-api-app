@@ -1,0 +1,95 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "JavaScript Processor",
+    "description": "run JavaScript and get result instantly.",
+    "contact": {
+      "name": "Yuki KAN",
+      "url": "https://px.mw/"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/kanreisa/azure-javascript-processor-api-app/blob/master/LICENSE"
+    }
+  },
+  "host": "localhost:1337",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/processor": {
+      "post": {
+        "tags": [
+          "JavaScriptProcessor"
+        ],
+        "summary": "Processor",
+        "description": "Process JavaScript Code",
+        "operationId": "Processor",
+        "consumes": [ ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "json",
+            "in": "query",
+            "description": "define json variable from JSON string",
+            "x-ms-summary": "define json variable from JSON string",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "description": "JavaScript code.",
+            "x-ms-summary": "JavaScript Code",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ProcesserOutput"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "default": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ProcesserOutput"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "ProcesserOutput": {
+      "required": [
+        "result",
+        "errors"
+      ],
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string",
+          "x-ms-summary": "Returned Value"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+﻿{
+  "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
+  "id": "JavaScriptProcessor",
+  "namespace": "",
+  "gateway": "2015-01-14",
+  "homepage": "https://github.com/kanreisa/azure-javascript-processor-api-app",
+  "categories": [
+    "integration",
+    "app-datasvc",
+    "other"
+  ],
+  "tags": [
+    "JavaScript",
+    "Processor"
+  ],
+  "copyright": "Copyright 2015 Yuki KAN",
+  "links": [
+    {
+      "text": "GitHub Repository",
+      "url": "https://github.com/kanreisa/azure-javascript-processor-api-app"
+    }
+  ],
+  "endpoints": {
+    "apiDefinition": "/swagger/docs/v1",
+    "status": null
+  },
+  "brandColor": "#f9b200"
+}
