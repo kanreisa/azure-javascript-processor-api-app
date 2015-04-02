@@ -22,8 +22,6 @@ module.exports = {
         }
         
         sandbox.code = req.query.code;
-        
-        console.log(sandbox);
 
         var code = 'result = (function () { ' + sandbox.code + ' }());';
         
